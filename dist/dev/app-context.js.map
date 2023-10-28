@@ -1,0 +1,1 @@
+{"version":3,"file":"app-context.js","names":["createContext"],"sources":["../../src/app-context.js"],"sourcesContent":["import { createContext } from \"preact\";\n\nexport default createContext({});\n"],"mappings":"AAAA,SAASA,aAAa,QAAQ,QAAQ;AAEtC,eAAeA,aAAa,CAAC,CAAC,CAAC,CAAC"}

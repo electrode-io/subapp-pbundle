@@ -1,0 +1,68 @@
+Invoking: clap test 
+[00:44:11] @xarc/run version 1.1.1 at /Users/s0s0p6u/Desktop/GTP/electrode/common/temp/node_modules/.pnpm/@xarc+run@1.1.1/node_modules/@xarc/run
+[00:44:11] node.js version v16.19.1 at /Users/s0s0p6u/nvm/nodejs/v16.19.1/bin/node
+[00:44:11] CWD is /Users/s0s0p6u/Desktop/GTP/electrode/packages/subapp-pbundle
+[00:44:11] Loaded ./xclap.js
+[00:44:11] PATH already contains ./node_modules/.bin
+[00:44:11] Process /test serial array ["compile","node-env","electrode/test-only"]
+[00:44:11] -Process /compile serial array ["func",["<concurrent>","compile-dev","compile-min","compile-node"]]
+[00:44:11] ..Execute /compile.S anonymous function
+[00:44:11] >>Done Execute /compile.S anonymous function (25 ms)
+[00:44:11] --Process /compile.S concurrent array ["compile-dev","compile-min","compile-node"]
+[00:44:11] ...Execute /compile-dev exec {BABEL_ENV=-src-dev} 'babel src -d dist/dev --delete-dir-on-start --source-maps'
+[00:44:11] ---Execute /compile-min exec {BABEL_ENV=-src-minify} 'babel src -d dist/min --no-comments --delete-dir-on-start'
+[00:44:11] ...Execute /compile-node exec {BABEL_ENV=-src-node} 'babel src -d dist/node --delete-dir-on-start --source-maps'
+Successfully compiled 5 files with Babel (1470ms).
+Successfully compiled 5 files with Babel (1471ms).
+[00:44:13] >>>Done Execute /compile-node exec {BABEL_ENV=-src-node} 'babel src -d dist/node --delete-dir-on-start --source-maps' (2.05 sec)
+[00:44:13] >>>Done Execute /compile-dev exec {BABEL_ENV=-src-dev} 'babel src -d dist/dev --delete-dir-on-start --source-maps' (2.06 sec)
+Successfully compiled 5 files with Babel (1920ms).
+[00:44:14] >>>Done Execute /compile-min exec {BABEL_ENV=-src-minify} 'babel src -d dist/min --no-comments --delete-dir-on-start' (2.50 sec)
+[00:44:14] >>Done Process /compile.S concurrent array ["compile-dev","compile-min","compile-node"] (2.51 sec)
+[00:44:14] >Done Process /compile serial array ["func",["<concurrent>","compile-dev","compile-min","compile-node"]] (2.54 sec)
+[00:44:14] -Execute /node-env setting env{BABEL_ENV=-src-node}
+[00:44:14] .Execute electrode/test-only as function
+[00:44:14] --Execute electrode/.test-only mocha -c test/spec
+
+
+  FE Preact framework
+    ✓ should setup FrameworkLib
+    ✓ should render component into DOM element
+    ✓ should hydrate render component into DOM element
+    ✓ should just return the component without DOM element
+
+  redux-bundler load subapp
+    ✓ should initialize reduxCreateStore if it's not provided
+    ✓ should keep user provided reduxCreateStore
+
+  shared redux store
+    ✓ setStoreContainer should take a custom container
+    ✓ getReduxCreateStore should create redux-bundler store
+    ✓ should default empty initialState
+    ✓ should not add bundle to the store twice
+
+  SSR Preact framework
+    ✓ should setup React framework
+    ✓ should not do SSR without component
+    ✓ should not do SSR if serverSideRendering is not true
+    ✓ should render subapp with w/o initial props if no prepare provided
+    ✓ should render Component from subapp with initial props from prepare
+    ✓ should render Component from subapp with hydration info
+    ✓ should render Component from subapp with initial props from server's prepare
+    ✓ should render Component with react context containing request
+    ✓ handlePrepare should throw error if trying to use react router (43ms)
+    ✓ handlePrepare should prepare redux data and store
+    ✓ handleSSR should prepare and realize redux data and store
+    ✓ should use empty default initial state if no prepare exist
+    ✓ should not attach initial state if attachInitialState is false
+    ✓ should throw if unable to create redux store
+    ✓ should skip SSR if serverSideRendering is not true
+    ✓ should use packReduxData to generate initial state if it exists
+    ✓ should provide location prop to StartComponent
+
+
+  27 passing (119ms)
+
+[00:44:25] >>Done Execute electrode/.test-only mocha -c test/spec (11.51 sec)
+[00:44:25] >Done Execute electrode/test-only as function (11.52 sec)
+[00:44:25] Done Process /test serial array ["compile","node-env","electrode/test-only"] (14.06 sec)
